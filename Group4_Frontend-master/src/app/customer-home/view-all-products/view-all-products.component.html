@@ -1,0 +1,58 @@
+<head>
+</head>
+<section style="background-color: rgb(255, 255, 255); position:absolute; left:0px;">
+  <br>
+  <div class="row" style="padding: 15px; width: 85%;">
+    <div class="col-md-40 offset-md-1">
+      <div class="input-group mb-3">
+        <input (keyup)="search()" type="text" class="form-control" placeholder="Search using product name or brand.."
+          [(ngModel)]="searchText">
+        <div class="input-group-btn">
+          <button class="btn btn-success" (click)="search()" type="button">Search</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+
+  <div *ngIf="productListToDisplay.length!=null && productListToDisplay.length>0">
+    <div *ngIf="!viewDetails">
+      <div class="row">
+        <div *ngFor="let product of productListToDisplay" class="col-md-2 mb-3">
+          <a class="nav-link" (click)="setSelectedProduct(product)">
+            <div style="border-radius: 20px; padding-top: 20px; background-color: bisque;" class="card border-0 shadow-sm">
+              <img [src]="'assets/'+ product.productId+'.jpg'" class="card-img-top" alt="Image Not Found"
+                onError="this.src='assets/404.png'">
+              <div class="card-body p-6">
+                <h5 class="card-title text-info mb-1">{{product.brand+" - "+product.name}}</h5>
+                <p class="card-text text-success  mb-2">Rs.{{product.price}}</p>
+                <button type="button" class="btn btn-sm btn-warning">View Product</button>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  <div *ngIf="productListToDisplay.length==0">
+    <div class="field-error-message" style="font-size:20px;">No products available!!</div>
+  </div>
+
+
+  <div *ngIf="viewDetails">
+    <a [routerLink]="" (click)="viewDetails=false" class="btn btn-dark" style="left: 250px; position: relative;">
+      Back
+    </a>
+    <button type="button" class="btn back" style="background-color: black; color: white;" routerLink="../cart">Go To Cart</button>
+    <br>
+    <app-product-details [selectedProduct]="selectedProduct"></app-product-details>
+  </div>
+
+
+</section>

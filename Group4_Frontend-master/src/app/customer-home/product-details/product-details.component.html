@@ -1,0 +1,49 @@
+<div class="container" style="width: 100%;">
+    <div class="row">
+      <div class="col-12 col-s-3">
+          <br>
+          
+              <h5 *ngIf="successMessage!=null && successMessage!=''" class="success-message">
+                  {{successMessage}}
+              </h5>
+              <h5 *ngIf="errorMessage!=null && errorMessage!=''" class="error-message">
+                  {{errorMessage}}
+              </h5>
+            <br>
+      </div>
+      <div class="card  text-white bg-dark mb-3 ct" style="width: 1500px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="card-img-top pdi" [src]="'assets/'+ selectedProduct.productId+'.jpg'"
+            alt="Image Not Found" onError="this.src='assets/resources/404.png'" height="350px" width="150px">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-title"> 
+               <b style="font-size: 20px;">{{selectedProduct.brand+" "+selectedProduct.name}}</b>
+              </p>
+              <br>
+            <table>
+              <tr>
+                <td><b style="font-size:15px">Category</b> </td> 
+                <td>{{selectedProduct.category}}</td>
+              </tr>
+              <br>
+              <br>
+              <tr>
+                <td class="feat"><b style="font-size:15px">Features</b> </td> 
+                <td><div *ngFor="let item of selectedProduct.description|productDescription">
+                  {{item}}</div>
+            </td>
+              </tr>
+            <tr>
+            <td><b style="font-size:15px">Price</b> </td>
+            <td>  Rs.{{selectedProduct.price |number:'1.2-2'}}</td>
+            </tr>
+            </table>
+            <button class="btn btn-light atc " style="font-size: small;" (click)="addToCart()">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      

@@ -1,0 +1,96 @@
+<section class="h-100" >
+    <div class="container py-5 h-50">
+        <div class="row d-flex justify-content-center align-items-center h-50">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 5%;">
+                    <div class="row g-0">
+                        <div class="col">
+                            <img class="shopping" src="assets/side img1.png" height="350px" alt="login form">
+
+                        </div>
+
+                        <!-- <div class="col-md-6 col-lg-5 d-none d-md-block"> -->
+                            <!-- <img src="assets/side img1.png" alt="login form" align-bottom="5px"
+                                class="img-fluid shopping" style="border-radius: 0 0 0 0;" /> -->
+                        <!-- </div> -->
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+                                <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                                        <!-- <span class="h1 fw-bold mb-0"><img height="70px" width="200px"
+                                                style="margin-left: -25px;" src="assets/ekart.png"></span> -->
+                                    </div>
+
+                                    <h1 class="fw-normal mb-3 pb-3" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color:#f7c04a;">LOGIN</h1>
+
+
+                                    <div class="form-floating form-group mb-4">
+                                        <input type="email" class="form-control" id="email-ip"
+                                            placeholder="Enter your EMail ID" formControlName="emailId">
+                                        <label for="email-ip">EMail ID</label>
+                                        <div
+                                            *ngIf="loginForm.controls['emailId'].invalid && loginForm.controls['emailId'].touched">
+                                            <div class="field-error-message"
+                                                *ngIf="loginForm.controls['emailId'].hasError('required')">
+                                                EMail ID is mandatory
+                                            </div>
+                                            <div class="field-error-message"
+                                                *ngIf="loginForm.controls['emailId'].dirty && loginForm.controls['emailId'].hasError('emailIdPatternError')">
+                                                EMail ID Pattern is invalid
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating form-group mb-4">
+                                        <input type="password" class="form-control" id="password-ip"
+                                            placeholder="Enter your Password" formControlName="password">
+                                        <label for="password-ip">Password</label>
+                                        <div
+                                            *ngIf=" loginForm.controls['password'].invalid && loginForm.controls['password'].touched ">
+                                            <div class="field-error-message"
+                                                *ngIf="loginForm.controls['password'].hasError('required')">
+                                                Password is mandatory
+                                            </div>
+                                            <div class="field-error-message"
+                                                *ngIf="loginForm.controls['password'].dirty && loginForm.controls['password'].hasError('passwordPatternError')">
+                                                Password Pattern is invalid
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <br>
+                                    <br>
+
+
+                                    <div class="row">
+
+                                        <button class="col-md-4 offset-md-1 buttonDesign btn1 btn"
+                                            [disabled]="!loginForm.valid" type="submit">Login</button>
+                                        <!-- <button class="col-md-4 offset-md-2 buttonDesign btn1" type="reset"
+                                            (click)="errorMessage = ''" [disabled]="loginForm.pristine">Reset</button> -->
+
+                                    </div>
+                                </form>
+                                <br>
+                                <br>
+
+                                <h5 *ngIf="tryToLogin" class="text-center text-info">
+                                    Logging...Please Wait!!
+                                </h5>
+
+                                <h3 class="error-message alert-error text-justify">{{ errorMessage }}</h3>
+                                <br />
+
+                                <h3 class="shop">Don't have an account? <a routerLink="../register">Register
+                                        here</a></h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

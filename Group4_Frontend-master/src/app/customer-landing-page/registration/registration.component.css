@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+.buttonDesign {
+    background-color:#f7c04a;
+    color: black;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 33px;
+    height: 40px;
+    font-weight: 400;
+    
+    border-radius: 5%;
+}
+
+/* .buttonDesign:hover {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px; */
+
+/* } */
+
+.btn1 {
+    margin-right: 0px;
+}
+
+.btn2 {
+    margin-left: 50px;
+}
+.card{
+    background-color: #0e0c0c;
+}
+
+.shopping {
+    margin-top: 150px;
+}
+.reg{
+    position:relative;
+    left:30px;
+    top: 100px;
+    border-radius: 5%;
+}
+
+button:disabled,
+button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+a{
+    text-decoration: none;
+}
+.reg1{
+    color: #f7c04a;
+}
+.reset{
+    background-color: #f7c04a;
+}
+.reset:hover{
+    background-color: #e3a621;
+}

@@ -1,0 +1,48 @@
+.buttonDesign {
+  background-color:#f7c04a;
+  color: black;
+  font-size: 23px;
+  height: 40px;
+  font-weight: 400;
+  
+}
+
+.buttonDesign:hover {
+  color:white;
+  background-attachment:#fac044;
+
+}
+
+.btn1 {
+  margin-left: 10px;
+}
+
+.btn2 {
+  margin-left: 50px;
+}
+
+.shopping {
+  margin-top: 70px;
+  border-radius: 5%;
+}
+.card{
+  background-color:black;
+}
+.shopping{
+  position: relative;
+  left:30px;
+
+}
+.shop{
+  color: #f7c04a ;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #c7c7c7;
+  background-color: #cccccc;
+  color: #666666;
+}
+a{
+  text-decoration: none;
+}

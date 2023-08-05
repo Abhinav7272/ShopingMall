@@ -1,0 +1,92 @@
+<h1 class="h1">Your Cart</h1>
+<br>
+<h5 *ngIf="successMessage!=null && successMessage!=''" class="success-message">
+  {{successMessage}}
+</h5>
+<h5 *ngIf="errorMessage!=null && errorMessage!=''" class="error-message">
+  {{errorMessage}}
+</h5>
+
+<div *ngIf="!viewBilling">
+  <div *ngIf="!viewCartProductDetails">
+    <div *ngFor="let cart of cartList">
+      <div class="card" style="border-radius: 20px;">
+        <div class="row">
+          <div class="col-auto">
+            <img [src]="'assets/'+ cart.product.productId+'.jpg'" class="img img-responsive im center-block" alt="Not Found"
+              onError="this.src='assets/resources/404.png'">
+          </div>
+          <div class="col card-block offset-1">
+            <br />
+            <b style="color: #F7c048">{{cart.product.name}}</b>
+            <strong style="color: #F7c048;">Brand:</strong>
+            <p style="color:white">{{cart.product.brand}}</p>
+            <br />
+            <strong style="color: #F7c048;">Price:</strong>
+            <p style="color:white">{{cart.product.price}}</p>
+            <br />
+            <strong style="color: #F7c048;">Quantity:</strong>
+            <label for="quantity">
+              <p style="color:white">{{cart.quantity}}</p>
+            </label>
+            <br />
+          </div>
+          <div class="col card-block"><br /><br /><br /><br />
+            <button class="plus btn btn-dark" (click)="alter('+',cart)">+</button><br><br>
+            <button class="plus btn btn-dark" (click)="alter('-',cart)">-</button>
+          </div>
+        </div>
+        <div  class="remove">
+          <button class=" btn btn-dark" (click)="deleteProductFromCart(cart)">Remove</button>
+        </div>
+
+      </div>
+    </div>
+    <div *ngIf="!cartList || cartList.length==0" class="error-message">
+      No products are added to the cart
+    </div>
+  </div>
+
+  <div *ngIf="viewCartProductDetails">
+    <div class="row">
+      <div class="col-md-2">
+        <button (click)="viewCartProductDetails=false" class="btn btn-info">
+          Back
+        </button>
+      </div>
+    </div>
+    <br>
+    <view-cart-product-detail [selectedCartProduct]="selectedCartProduct"></view-cart-product-detail>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+
+  <br>
+  <!-- <div *ngIf="(cartList || cartList.length!=0)&&!viewCartProductDetails" class="error-message"> -->
+  <div *ngIf="(cartList )&&!viewCartProductDetails" class="error-message">
+
+    <button type="button" class="btn back" (click)="viewBilling=true" style="background-color: black">Buy Now</button>
+    <button type="button"  routerLink="../products" class="btn back" style="background-color: black ; margin-left: 20px;">Go Back To Shoping</button>
+
+  </div>
+  <br>
+  <br>
+  <br>
+</div>
+
+
+<div *ngIf="viewBilling">
+  <div class="row">
+    <div>
+      <button (click)="viewBilling=false" class="btn btn-info">
+        Back
+      </button>
+      <br>
+      <br>
+      <app-place-order></app-place-order>
+    </div>
+  </div>
+  <br>

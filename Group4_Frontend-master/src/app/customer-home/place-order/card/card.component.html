@@ -1,0 +1,74 @@
+<div class="card">
+    <div class="card-title" style="text-align: center;">
+        <h1><b style="color: #f7c048;">Add New Card</b></h1>
+    </div>
+    <span class="text-success" *ngIf="successMessage">{{successMessage}}</span>
+    <div class="mat-card-content">
+        <form [formGroup]="addCardForm" (ngSubmit)="addNewCard()">
+            <div class="form-group">
+                <label><b>Card Type</b></label>
+                <select class="form-control" formControlName="cardType" id="cardType">
+                    <option value=""><b>Choose a Card Type</b></option>
+                    <option *ngFor="let a of cardTypeList" value="{{a}}">{{a}}</option>
+                </select>
+                <span id="cardTypeError" class="text-danger"
+                    *ngIf="addCardForm.controls['cardType'].dirty && addCardForm.controls['cardType'].invalid">
+                    Choose one among the 2 card types!
+                </span>
+            </div>
+  
+            <div class="form-group">
+                <label for="cardNumber"><b>Card Number</b></label>
+                <input type="text" class="form-control" formControlName="cardNumber" id="cardNumber"
+                    placeholder="Enter Card Number" />
+                <span id="cardNumberError" class="text-danger"
+                    *ngIf="addCardForm.controls['cardNumber'].dirty && addCardForm.controls['cardNumber'].invalid">
+                    Card Number is invalid!
+                </span>
+            </div>
+  
+            <div class="form-group">
+                <label for="cvv"><b>CVV</b></label>
+                <input type="number" class="form-control" formControlName="cvv" id="cvv" placeholder="Enter CVV" />
+                <span id="cvvError" class="text-danger"
+                    *ngIf="addCardForm.controls['cvv'].dirty && addCardForm.controls['cvv'].invalid">
+                    CVV is invalid!
+                </span>
+            </div>
+  
+            <div class="form-group">
+                <label for="expiryDate"><b>Expiry Date</b></label>
+                <input type="date" class="form-control" formControlName="expiryDate" id="expiryDate" />
+                <span id="expiryDateError" class="text-danger"
+                    *ngIf="addCardForm.controls['expiryDate'].dirty && addCardForm.controls['expiryDate'].invalid">
+                    The card is expired!
+                </span>
+            </div>
+  
+            <div class="form-group">
+                <label for="nameOnCard"><b>Name on Card</b></label>
+                <input type="text" class="form-control" formControlName="nameOnCard" id="nameOnCard"
+                    placeholder="Enter the name on card" />
+                <span id="nameOnCardError"
+                    *ngIf="addCardForm.controls['nameOnCard'].dirty && addCardForm.controls['nameOnCard'].invalid">
+                    name is invalid!
+                </span>
+            </div>
+          <div class="row">
+              <div class="col">
+            <div class="form-group">
+                <button type="submit" class="btn anc" [disabled]="addCardForm.pristine || addCardForm.invalid"><b>Add New Card</b></button>
+          </div>
+      </div>
+      <div class="col">
+          <div class="form-group">
+              <button type="submit" class="btn back" routerLink="../placeOrder"  ><b>Back</b></button>
+        </div>
+      </div>
+      </div>
+        </form>
+        
+    <span class="text-danger" *ngIf="errorMessage != undefined || errorMessage != null">{{errorMessage}}</span>
+  
+    </div>
+  </div>

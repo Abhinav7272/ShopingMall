@@ -1,0 +1,161 @@
+<section class="h-30" >
+    <div class="container py-5 h-30">
+        <div class="row d-flex justify-content-center align-items-center h-30">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 5%;">
+                    <div class="row g-0">
+                        <div class="col">
+                            <img class="reg" src="assets/side img1.png" height="350px" alt="registration form">
+                        </div>
+                        <!-- <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img class="reg" src="assets/side img1.png" alt="registration form" 
+                                style="border-radius: 0 0 0 0;" />
+                        </div> -->
+
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5" style="color: #f7c04a;">
+                                <form [formGroup]="registerUserForm" (ngSubmit)="registerUser()">
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                                        <!-- <span class="h1 fw-bold mb-0"><img height="70px" width="200px"
+                                                style="margin-left: -20px;" src="assets/ekart.png"></span> -->
+                                    </div>
+
+                                    <h1 class="fw-normal" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">REGISTRATION
+                                    </h1>
+
+
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input class="form-control" formControlName="name" placeholder="Enter your Name"
+                                            id="name" />
+
+                                        <div
+                                            *ngIf="registerUserForm.controls['name'].invalid && registerUserForm.controls['name'].touched">
+
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['name'].hasError('required')">
+                                                Name is mandatory
+                                            </div>
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['name'].dirty && registerUserForm.controls['name'].hasError('namePatternError')">
+                                                Name Pattern is invalid
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="form-group">
+                                        <label for="emailId">EMail ID</label>
+                                        <input class="form-control" formControlName="emailId"
+                                            placeholder="Enter your EMail ID" id="emaiId" />
+                                        <div
+                                            *ngIf="registerUserForm.controls['emailId'].invalid && registerUserForm.controls['emailId'].touched">
+
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['emailId'].hasError('required')">
+                                                EMail ID is mandatory
+                                            </div>
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['emailId'].dirty && registerUserForm.controls['emailId'].hasError('emailIdPatternError')">
+                                                EMail ID Pattern is invalid
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="form-group">
+                                        <label for="phoneNumber">Phone Number</label>
+                                        <input class="form-control" formControlName="phoneNumber"
+                                            placeholder="Enter your Phone Number" id="phoneNumber" />
+                                        <div
+                                            *ngIf="registerUserForm.controls['phoneNumber'].invalid && registerUserForm.controls['phoneNumber'].touched">
+
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['phoneNumber'].hasError('required')">
+                                                Phone Number is mandatory
+                                            </div>
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['phoneNumber'].dirty && registerUserForm.controls['phoneNumber'].hasError('phoneNumberError')">
+                                                Phone Number Pattern is invalid
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="form-group">
+                                        <label for="address">Address</label>
+                                        <input class="form-control" formControlName="address"
+                                            placeholder="Enter your Address" id="address" />
+                                        <div
+                                            *ngIf="registerUserForm.controls['address'].invalid && registerUserForm.controls['address'].touched">
+
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['address'].hasError('required')">
+                                                Address is mandatory
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" formControlName="password"
+                                            placeholder="Enter Password" id="password" />
+                                        <div *ngIf="registerUserForm.controls['password'].invalid
+                              && registerUserForm.controls['password'].touched">
+
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['password'].hasError('required')">
+                                                Password is mandatory
+                                            </div>
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['password'].dirty && registerUserForm.controls['password'].hasError('passwordPatternError')">
+                                                Password Pattern is invalid
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="form-group">
+                                        <label for="confirmPassword">Confirm Password</label>
+                                        <input type="password" class="form-control" formControlName="confirmPassword"
+                                            placeholder="Enter Password again to confirm" id="confirmPassword" />
+                                        <div *ngIf="registerUserForm.controls['confirmPassword'].invalid
+                                  && registerUserForm.controls['confirmPassword'].touched">
+
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['confirmPassword'].hasError('required')">
+                                                Please re-enter the password
+                                            </div>
+                                            <div class="field-error-message"
+                                                *ngIf="registerUserForm.controls['password'].value != registerUserForm.controls['confirmPassword'].value">
+                                                Passwords do not match!!
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+
+
+                                    <div class="row">
+                                        <button [disabled]="!registerUserForm.valid"
+                                            class="col-md-4 offset-md-1 btn btn-primary " style="margin-left: 15px">
+                                            Register
+                                        </button>
+                                        <button type="reset" [disabled]="registerUserForm.pristine"
+                                            class="col-md-4 offset-md-2 btn btn-primary reset " style="margin-left: 20px;">
+                                            Reset
+                                        </button>
+
+                                    </div>
+                                </form>
+                                <h3 class="success-message">{{successMessage}}</h3>
+                                <h3 class="error-message">{{errorMessage}}</h3>
+                                <br />
+                                <h3 class="reg1">Are you a registered user? <a routerLink="../login">Login here</a>
+                                </h3>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,32 @@
+<div
+    style="background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);width:1280px;height: 530px; left: 0px; position: absolute;">
+    <div class="container"><br>
+        <div class="h2 title">My Orders</div><br>
+        <div *ngFor="let order of orders | paginate : { itemsPerPage : 10, currentPage : p}; let i = index">
+            <div class="card mb-4">
+                <div class="card-header bg-info">
+                    <b>Order Number:</b> {{order.orderId}}
+                </div>
+                <div class="card-body">
+                    <div>
+                        <span><b>Date and Time of Order: </b> </span>
+                        <span>{{order.dateOfOrder}} </span>
+                    </div><br>
+                    <div>
+                        <span><b>Shippping Address: </b> </span>
+                        <span>{{order.deliveryAddress}}</span>
+                    </div><br>
+                    <div>
+                        <span><b>Payment Method: </b> </span>
+                        <span>{{order.paymentThrough}}</span>
+                    </div><br>
+                    <div>
+                        <span><b>Price: </b> </span>
+                        <span>{{order.totalPrice}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <pagination-controls (pageChange)="p=$event" style="text-align: center;"></pagination-controls>
+    </div>
+</div>
