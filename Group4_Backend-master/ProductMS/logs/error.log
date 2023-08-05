@@ -1,0 +1,34 @@
+2023-Mar-21 16:36:05 PM [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3334"]
+2023-Mar-21 16:36:05 PM [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 3334 (http) with context path '/Ekart'
+2023-Mar-21 16:36:05 PM [main] INFO  org.springframework.cloud.consul.serviceregistry.ConsulServiceRegistry - Registering service with consul: NewService{id='ProductMS-3334', name='ProductMS', tags=[contextPath=/Ekart], address='MYSGEC2B122-004.ad.infosys.com', meta={secure=false}, port=3334, enableTagOverride=null, check=Check{script='null', dockerContainerID='null', shell='null', interval='10s', ttl='null', http='http://localhost:3334/Ekart/actuator', method='null', header={}, tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null', grpc='null', grpcUseTLS=null}, checks=null}
+2023-Mar-21 16:36:06 PM [RMI TCP Connection(4)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Ekart] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-Mar-21 16:36:06 PM [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-Mar-21 16:36:06 PM [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2023-Mar-21 21:52:17 PM [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2023-Mar-21 21:52:18 PM [main] INFO  org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-config/ProductMS/'}, BootstrapPropertySource {name='bootstrapProperties-config/application/'}]
+2023-Mar-21 21:52:20 PM [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-Mar-21 21:52:20 PM [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 171 ms. Found 1 JPA repository interfaces.
+2023-Mar-21 21:52:20 PM [main] INFO  org.springframework.cloud.context.scope.GenericScope - BeanFactory id=f00a0384-886e-3beb-a354-a78f5cccf266
+2023-Mar-21 21:52:22 PM [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3334 (http)
+2023-Mar-21 21:52:22 PM [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3334"]
+2023-Mar-21 21:52:22 PM [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-Mar-21 21:52:22 PM [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-Mar-21 21:52:22 PM [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Ekart] - Initializing Spring embedded WebApplicationContext
+2023-Mar-21 21:52:22 PM [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3397 ms
+2023-Mar-21 21:52:23 PM [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-Mar-21 21:52:23 PM [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-Mar-21 21:52:23 PM [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-Mar-21 21:52:23 PM [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.7.Final
+2023-Mar-21 21:52:23 PM [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-Mar-21 21:52:23 PM [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-Mar-21 21:52:25 PM [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-Mar-21 21:52:25 PM [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-Mar-21 21:52:25 PM [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-Mar-21 21:52:29 PM [main] WARN  org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-Mar-21 21:52:29 PM [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-Mar-21 21:52:29 PM [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3334"]
+2023-Mar-21 21:52:30 PM [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 3334 (http) with context path '/Ekart'
+2023-Mar-21 21:52:30 PM [main] INFO  org.springframework.cloud.consul.serviceregistry.ConsulServiceRegistry - Registering service with consul: NewService{id='ProductMS-3334', name='ProductMS', tags=[contextPath=/Ekart], address='MYSGEC2B122-004.ad.infosys.com', meta={secure=false}, port=3334, enableTagOverride=null, check=Check{script='null', dockerContainerID='null', shell='null', interval='10s', ttl='null', http='http://localhost:3334/Ekart/actuator', method='null', header={}, tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null', grpc='null', grpcUseTLS=null}, checks=null}
+2023-Mar-21 21:52:30 PM [http-nio-3334-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Ekart] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-Mar-21 21:52:30 PM [http-nio-3334-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-Mar-21 21:52:30 PM [http-nio-3334-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms

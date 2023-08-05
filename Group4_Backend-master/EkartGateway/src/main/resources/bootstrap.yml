@@ -1,0 +1,13 @@
+server:
+ port: 4000
+spring:
+  application:
+    name: EkartGateway
+  cloud:
+    consul:
+      discovery:
+        hostname: localhost
+#      discovery:
+#        health-check-url: http://localhost:${server.port}${server.servlet.context-path}/actuator
+#        hostname: 
+      
